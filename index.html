@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>¡Mis 15 Años - Milenka!</title>
+  
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+  <!-- ===============================
+       1. PORTADA INICIAL (LANDING)
+       =============================== -->
+  <section id="landing-screen" class="fullscreen-view landing-bg">
+    <div class="landing-content">
+      <p class="font-sm subtitle-top">Tienes una invitación muy especial</p>
+      <h1 class="landing-title">Mis 15 Años</h1>
+      <h2 class="landing-name">Milenka</h2>
+      
+      <div class="landing-photos">
+        <img src="./fotos/XV%20MILENKA%2010.JPG.jpeg" alt="Milenka" class="photo-left shadow-xl float-anim">
+        <img src="./fotos/milenka%20xv%202.JPG.jpeg" alt="Milenka" class="photo-right shadow-xl float-delay">
+      </div>
+      
+      <button id="btn-ver-invitacion" class="btn btn-primary btn-large mt-md pulse shadow-glass">
+        Ver Invitación <i class="ph ph-envelope-open"></i>
+      </button>
+    </div>
+  </section>
+
+  <!-- ===============================
+       2. PANTALLA DE VIDEO
+       =============================== -->
+  <section id="video-screen" class="fullscreen-view hidden-view">
+    <button id="btn-skip-video" class="btn-skip" aria-label="Saltar Video">
+      Saltar <i class="ph ph-fast-forward"></i>
+    </button>
+    <video id="intro-video" playsinline preload="auto">
+      <source src="Video Invitación.mp4" type="video/mp4">
+      Tu navegador no soporta reproducción de video.
+    </video>
+  </section>
+
+  <!-- ===============================
+       3. INVITACIÓN PRINCIPAL
+       =============================== -->
+  <div id="main-invitation" class="hidden-view">
+    
+    <button id="music-btn" class="music-controller" aria-label="Control de Música">
+      <i class="ph ph-music-notes"></i>
+    </button>
+    <audio id="bg-music" loop>
+      <source src="./audioPrincipal.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- HEADER / HERO -->
+    <header class="hero-section reveal-on-scroll">
+      <!-- Capas del overlay -->
+      <div class="hero-overlay"></div>
+      <div class="hero-overlay-gradient"></div>
+      <div class="hero-wave"></div>
+
+      <!-- Partículas flotantes decorativas -->
+      <span class="hero-particle p1"></span>
+      <span class="hero-particle p2"></span>
+      <span class="hero-particle p3"></span>
+      <span class="hero-particle p4"></span>
+      <span class="hero-particle p5"></span>
+
+      <div class="hero-content">
+        <div class="hero-badge delay-1">🌺 Aloha Party 🌴</div>
+        <h1 class="title-main delay-2">15<span>de Milenka</span></h1>
+        <div class="hero-date-ribbon delay-3">
+          <span>16</span> Mayo &nbsp;·&nbsp; 7:00 pm
+        </div>
+        <button id="scroll-down-btn" class="scroll-btn delay-4">
+          <i class="ph ph-caret-double-down scrolling-indicator"></i>
+        </button>
+      </div>
+    </header>
+
+    <main class="container">
+      
+      <!-- FAMILIA -->
+      <section id="family-section-anchor" class="family-section reveal-on-scroll mb-md">
+        <div class="leaf-decoration leaf-left"></div>
+        <div class="leaf-decoration leaf-right"></div>
+        
+        <div class="family-card glass-card">
+          <h3>Mis Padres:</h3>
+          <p>Gilmar Arce <br> Lisbet Salas</p>
+          
+          <h3 class="margin-top-md mt-sm">Mis Padrinos:</h3>
+          <p>Carlos Cardenas <br> Andrea Marquez</p>
+        </div>
+      </section>
+
+      <!-- FECHA -->
+      <section class="date-section reveal-on-scroll mb-lg">
+        <div class="date-big">
+          <span class="day">16</span> 
+          <span class="month">Mayo</span>
+          <span class="divider">|</span>
+          <span class="time">7:00 <small>pm</small></span>
+        </div>
+
+        <div class="countdown-container mt-md glass-card">
+          <h4>Faltan:</h4>
+          <div id="countdown" class="countdown-grid">
+            <div class="cd-item"><span id="cd-days">0</span><span>Días</span></div>
+            <div class="cd-item"><span id="cd-hours">0</span><span>Horas</span></div>
+            <div class="cd-item"><span id="cd-minutes">0</span><span>Min</span></div>
+            <div class="cd-item"><span id="cd-seconds">0</span><span>Seg</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CARRUSEL -->
+      <section class="carousel-section reveal-on-scroll mb-lg">
+        <h3 class="section-title text-center" style="font-size: 1.8rem;">Mis Fotos</h3>
+        
+        <div class="carousel-wrapper">
+          <div class="carousel-track" id="photo-track">
+            <img src="./fotos/XV%20MILENKA%2010.JPG.jpeg" alt="Recuerdo de Milenka 1" class="carousel-img">
+            <img src="./fotos/XV%20MILENKA%203.JPG.jpeg" alt="Recuerdo de Milenka 2" class="carousel-img">
+            <img src="./fotos/XV%20MILENKA%205.jpg.jpeg" alt="Recuerdo de Milenka 3" class="carousel-img">
+            <img src="./fotos/milenka%20xv%201.JPG.jpeg" alt="Recuerdo de Milenka 4" class="carousel-img">
+            <img src="./fotos/milenka%20xv%202.JPG.jpeg" alt="Recuerdo de Milenka 5" class="carousel-img">
+          </div>
+          <div class="carousel-controls">
+            <button id="btn-prev" aria-label="Anterior foto"><i class="ph ph-caret-left"></i></button>
+            <div class="carousel-dots" id="carousel-dots"></div>
+            <button id="btn-next" aria-label="Siguiente foto"><i class="ph ph-caret-right"></i></button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ITINERARIO (NUEVO) -->
+      <section class="itinerary-section reveal-on-scroll mb-lg">
+        <h3 class="section-title text-center">Itinerario</h3>
+        <p class="text-center mb-sm font-sm">Lo que tenemos preparado</p>
+        
+        <div class="timeline glass-card">
+          <div class="time-item">
+            <div class="time-icon">🌺</div>
+            <div class="time-content">
+              <span class="time-badge">7:00 pm — 8:00 pm</span>
+              <p class="time-desc">Recepción de Invitados</p>
+            </div>
+          </div>
+          <div class="time-item">
+            <div class="time-icon">📸</div>
+            <div class="time-content">
+              <span class="time-badge">8:00 pm — 9:00 pm</span>
+              <p class="time-desc">Fotos 360 y Espejo Mágico</p>
+            </div>
+          </div>
+          <div class="time-item">
+            <div class="time-icon">👑</div>
+            <div class="time-content">
+              <span class="time-badge">9:00 pm — 9:30 pm</span>
+              <p class="time-desc">Llegada de la Quinceañera</p>
+            </div>
+          </div>
+          <div class="time-item">
+            <div class="time-icon">💐</div>
+            <div class="time-content">
+              <span class="time-badge">9:30 pm — 10:00 pm</span>
+              <p class="time-desc">Ceremonia Central</p>
+            </div>
+          </div>
+          <div class="time-item">
+            <div class="time-icon">🌴</div>
+            <div class="time-content">
+              <span class="time-badge">10:00 pm — 2:00 am</span>
+              <p class="time-desc">ALOHA PARTY 🎉</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- UBICACIÓN (IFRAME) -->
+      <section class="location-section reveal-on-scroll mb-lg">
+        <div class="glass-card location-card text-center">
+          <i class="ph ph-map-pin icon-lg"></i>
+          <h3 class="section-title mt-xs">Lugar</h3>
+          <p class="bold mt-xs">Salón de Eventos Fundo Arequipa</p>
+          <p class="address">Av. Arancota 161 - Sachaca</p>
+          
+          <div class="map-container mt-sm">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3826.6442331105077!2d-71.57314876754401!3d-16.442885219699598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91423557e83bed79%3A0x118faa30e8849f54!2sFundo%20Arequipa%20-%20Eventos!5e0!3m2!1ses-419!2spe!4v1774709355319!5m2!1ses-419!2spe" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa de ubicación de la fiesta de Milenka"></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- DRESSCODE & REGALOS -->
+      <section class="details-section reveal-on-scroll mb-lg">
+        <div class="glass-card dresscode-card text-center mb-md">
+          <i class="ph ph-coat-hanger icon-lg"></i>
+          <h3 class="section-title mt-xs">Traje</h3>
+          <p class="bold highlight-text fade-color">Etiqueta</p>
+          
+          <div class="colors-container mt-md">
+            <p class="font-sm mb-xs">Colores Reservados:</p>
+            <div class="color-circles">
+              <span class="circle bg-beige" title="Blanco"></span>
+              <span class="circle bg-red" title="Rojo"></span>
+              <span class="circle bg-orange" title="Naranja"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card gifts-card text-center">
+          <div class="gifts-icons mb-xs">
+            <i class="ph ph-gift icon-xl"></i>
+            <span class="font-sm mx-xs">y/o</span>
+            <i class="ph ph-envelope-simple icon-xl"></i>
+          </div>
+          <h3 class="section-title">Regalos</h3>
+          <p class="font-sm mt-xs">Si deseas hacerme un presente, el salón contará con caja y baúl de regalos.</p>
+        </div>
+      </section>
+
+      <!-- COMPARTIR FOTOS -->
+      <section class="share-photos-section reveal-on-scroll mb-lg text-center">
+        <div class="glass-card">
+          <i class="ph ph-camera icon-lg" style="color: var(--color-primary);"></i>
+          <h3 class="section-title mt-xs">¡Comparte tus Recuerdos!</h3>
+          <p class="font-sm mt-sm mb-md">Sube las fotos y videos que tomes a nuestra carpeta compartida.</p>
+          
+          <div class="qr-container mb-md" style="max-width: 160px; margin: 0 auto;">
+            <!-- Asegúrate de cargar la imagen correcta localmente qr.png -->
+            <img src="./qr.png" alt="Código QR Google Drive" style="width: 100%; border-radius: 12px; border: 4px solid white; box-shadow: var(--shadow-sm);">
+          </div>
+          
+          <a href="https://drive.google.com/drive/folders/1N9tDbWaJjO7-JeHidHaJJSeEbElxP6CQ?usp=sharing" target="_blank" class="btn btn-primary pulse" style="width: 100%; margin-top: 10px;">
+            <i class="ph ph-folder-open" style="font-size: 1.2rem;"></i> Subir Fotos Aquí
+          </a>
+        </div>
+      </section>
+
+      <!-- RSVP FORM -->
+      <section class="rsvp-section reveal-on-scroll mb-sm">
+        <div class="glass-card rsvp-card text-center">
+          <h3 class="section-title emphasis" style="margin-bottom: 10px;">Confirmar Asistencia</h3>
+          <p class="mb-sm">Por favor, confirma antes del <strong>3 de Mayo</strong></p>
+          
+          <form id="rsvp-form" class="rsvp-form mt-sm">
+            <div class="form-group mb-sm">
+              <label for="guest-name" style="display:none;">Nombre completo</label>
+              <input type="text" id="guest-name" name="nombre" placeholder="Nombre completo" required aria-label="Ingresa tu nombre completo">
+            </div>
+            <!-- Campo Asistirás removido -->
+            <div class="form-group mb-xs">
+              <label for="guest-phone" style="display:none;">Número de teléfono</label>
+              <input type="tel" id="guest-phone" name="telefono" placeholder="Número de teléfono" required aria-label="Ingresa tu número de teléfono">
+            </div>
+            <button type="submit" class="btn btn-primary btn-submit mt-sm pulse">Enviar Confirmación</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- MENSAJE FINAL -->
+      <section class="reveal-on-scroll mt-md mb-xl">
+        <div class="farewell-card glass-card text-center">
+          <div class="farewell-emojis">🌺 🌴 🌊 🍹 🌸</div>
+          <p class="farewell-quote">Ponte tus <span class="farewell-emoji-inline">😎</span> y ven a la fiesta más divertida del año</p>
+          <div class="farewell-title-wrap">
+            <h2 class="farewell-title">¡TE ESPERO!</h2>
+          </div>
+          <p class="farewell-signature">Con amor, <strong>Milenka</strong> 💕</p>
+        </div>
+      </section>
+
+    </main>
+  </div> <!-- Fin #main-invitation -->
+
+  <script src="app.js"></script>
+</body>
+</html>
